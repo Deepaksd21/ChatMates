@@ -5,7 +5,7 @@ import styled from "styled-components";
 import loader from "../assets/loader.gif";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { SetAvatarRoute } from "../utils/APIRoutes";
+import { setAvatarRoute } from "../utils/APIRoutes";
 import { Buffer } from "buffer";
 
 export default function SetAvatar() {
@@ -30,7 +30,7 @@ export default function SetAvatar() {
       console.log("Selecting Picture --->");
       const user = await JSON.parse(localStorage.getItem("Chat-user"));
 
-      const { data } = await axios.post(`${SetAvatarRoute}/${user._id}`, {
+      const { data } = await axios.post(`${setAvatarRoute}/${user._id}`, {
         image: avatars[selectedAvatar],
       });
       if (data.isSet) {

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Picker from "emoji-picker-react";
 import EmojiPicker from "emoji-picker-react";
 
-export default function ChatInput() {
+export default function ChatInput({ handleSendMsg }) {
   const [msg, setMsg] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const handleEmojiPickerhideShow = () => {
@@ -18,6 +18,14 @@ export default function ChatInput() {
     setMsg(message);
   };
 
+  const sendChat = (event) => {
+    event.preventDefault();
+    if (msg.length > 0) {
+      handleSendMsg(msg);
+      setMsg("");
+    }
+  };
+
   return (
     <>
       <Container>
@@ -27,7 +35,7 @@ export default function ChatInput() {
             {showEmojiPicker && <EmojiPicker onEmojiClick={handleEmojiClick} />}
           </div>
         </div>
-        <form className="input-container">
+        <form className="input-container" onSubmit={(e) => sendChat(e)}>
           <input
             type="text"
             placeholder="Type your message here"

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Logo from "../assets/logo.svg";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { loginRoute } from "../utils/APIRoutes";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ export default function Login() {
     theme: "colored",
   };
 
-  const handleValidation = () => {
+  const validateForm = () => {
     const { userName, password } = values;
 
     if (userName === "") {
@@ -42,9 +43,22 @@ export default function Login() {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if (handleValidation()) {
+    if (validateForm()) {
+      const { userName, password } = values;
+      const { data } = await axios.post(loginRoute, {
+        userName,
+        password,
+      });
+      if (data.success === false) {
+        toast.error(data.msg, toastOptions);
+      }
+      if (data.success === true) {
+        localStorage.setItem("Chat-user", JSON.stringify(data.user));
+
+        navigate("/");
+      }
     }
   };
 
@@ -54,7 +68,7 @@ export default function Login() {
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
             <img src={Logo} alt="logo" />
-            <h1>snappy</h1>
+            <h1>Chat-Mates</h1>
           </div>
           <input
             type="text"
