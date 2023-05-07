@@ -77,6 +77,9 @@ function ChatContainer({ currentChat, currentUser, socket }) {
           </div>
           <div className="chat-messages">
             {messages?.map((message) => {
+              {
+                console.log("All Messages History --->", message);
+              }
               return (
                 <div ref={scrollRef} key={uuidv4}>
                   <div
