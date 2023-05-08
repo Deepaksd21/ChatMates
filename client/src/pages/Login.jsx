@@ -68,7 +68,8 @@ export default function Login() {
       <FormContainer>
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
-            <img src={Logo} alt="logo" />
+            {/* <img src={Logo} alt="logo" /> */}
+            <img src="https://www.svgrepo.com/show/6995/chat.svg" alt="logo" />
             <h1>Chat-Mates</h1>
           </div>
           <input
@@ -118,6 +119,10 @@ const FormContainer = styled.div`
     }
   }
 
+  .submit {
+    background-color: red;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -132,7 +137,7 @@ const FormContainer = styled.div`
     border: 0.1rem solid #4e0eff;
     border-radius: 0.4rem;
     color: white;
-    width: 100%;
+    width: 90%;
     font-size: 1rem;
     &:focus {
       border: 0.1rem solid #997af0;

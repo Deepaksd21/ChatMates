@@ -54,7 +54,6 @@ export default function Register() {
   };
 
   const handleSubmit = async (event) => {
-    console.log("Handle", handleValidation());
     event.preventDefault();
     if (handleValidation()) {
       const { userName, email, password } = values;
@@ -85,8 +84,9 @@ export default function Register() {
       <FormContainer>
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
-            <img src={Logo} alt="logo" />
-            <h1>snappy</h1>
+            {/* <img src={Logo} alt="logo" /> */}
+            <img src="https://www.svgrepo.com/show/6995/chat.svg" alt="logo" />
+            <h1>Chat-Mates</h1>
           </div>
           <input
             type="text"
@@ -160,7 +160,7 @@ const FormContainer = styled.div`
     border: 0.1rem solid #4e0eff;
     border-radius: 0.4rem;
     color: white;
-    width: 100%;
+    width: 90%;
     font-size: 1rem;
     &:focus {
       border: 0.1rem solid #997af0;
