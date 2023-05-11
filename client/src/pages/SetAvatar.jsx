@@ -43,28 +43,13 @@ export default function SetAvatar() {
     }
   };
 
-  let imagess = [
-    "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png",
-    "https://cdn-icons-png.flaticon.com/128/4333/4333609.png",
-    "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375__340.png",
-    "https://www.shareicon.net/data/512x512/2016/05/24/770137_man_512x512.png",
-    "https://cdn.pixabay.com/photo/2016/08/20/05/36/avatar-1606914_1280.png",
-    "https://www.vhv.rs/dpng/d/426-4263064_circle-avatar-png-picture-circle-avatar-image-png.png",
-    "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Photo.png",
-    "https://cdn-icons-png.flaticon.com/512/186/186313.png",
-    "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-No-Background.png",
-    "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Pic.png",
-    "https://w7.pngwing.com/pngs/905/625/png-transparent-computer-icons-user-profile-women-avatar-child-face-head-thumbnail.png",
-    "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-HD-Image.png",
-    "https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child-thumbnail.png",
-    "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Images-HD.png",
-  ];
-
   useEffect(() => {}, []);
 
   useEffect(() => {
+    /**
+     * ! Avatar Images
+     */
     const allImages = [
-      /* Array of 14 images */
       "https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png",
       "https://cdn-icons-png.flaticon.com/128/4333/4333609.png",
       "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375__340.png",

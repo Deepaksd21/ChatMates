@@ -24,6 +24,10 @@ export default function Login() {
     theme: "colored",
   };
 
+  /**
+   * ! Form validation for login
+   */
+
   const validateForm = () => {
     const { userName, password } = values;
 
@@ -45,6 +49,7 @@ export default function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (validateForm()) {
       const { userName, password } = values;
       const { data } = await axios.post(loginRoute, {
